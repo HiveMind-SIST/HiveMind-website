@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Project - Hive Mind</title>
+    <meta
+      name="description"
+      content="Add a new project to Hive Mind Community"
+    />
+    <!-- Corrected path for CSS -->
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <!-- Corrected paths for routes and assets -->
+        <a href="/" class="nav-logo">
+          <img src="/assets/logo.png" alt="Hive Mind Logo" class="logo-img" />
+          <span>HIVE MIND</span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/projects" class="nav-link">Projects</a></li>
+          <li><a href="/members" class="nav-link">Members</a></li>
+          <li><a href="/gallery" class="nav-link">Gallery</a></li>
+          <li><a href="/blogs" class="nav-link">Blogs</a></li>
+        </ul>
+        <!-- DYNAMIC AUTH SECTION -->
+        <div class="auth-section">
+          {% if user %}
+          <span class="welcome-user">{{ user.name }}</span>
+          <a href="/logout" class="login-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+          {% else %}
+          <a href="/login" class="login-btn">
+            <i class="fas fa-user"></i>
+            <span>Login</span>
+          </a>
+          {% endif %}
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Add New Project</h1>
+        <p class="page-subtitle">
+          Share your innovative work with the Hive Mind community
+        </p>
+      </div>
+    </section>
+
+    <!-- Add Project Form Section -->
+    <section class="add-project">
+      <div class="container">
+        <div class="add-project-card">
+          <div class="form-header">
+            <i class="fas fa-plus-circle"></i>
+            <h2>Project Information</h2>
+            <p>Please fill in all the required details to add a new project</p>
+          </div>
+
+          <form class="project-form" id="projectForm">
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="projectImage" class="form-label">
+                  <i class="fas fa-image"></i>
+                  Project Image
+                </label>
+                <div class="file-upload-area" id="projectImageUpload">
+                  <div class="upload-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <span>Click to upload project image</span>
+                    <small>PNG, JPG, JPEG up to 5MB</small>
+                  </div>
+                  <input
+                    type="file"
+                    id="projectImage"
+                    accept="image/*"
+                    hidden
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="projectTitle" class="form-label">
+                  <i class="fas fa-heading"></i>
+                  Project Title
+                </label>
+                <input
+                  type="text"
+                  id="projectTitle"
+                  class="form-input"
+                  placeholder="Enter project title"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="techStack" class="form-label">
+                  <i class="fas fa-code"></i>
+                  Tech Stack
+                </label>
+                <div class="tech-input-container">
+                  <input
+                    type="text"
+                    id="techStack"
+                    class="form-input"
+                    placeholder="Enter technologies separated by commas (e.g., Python, TensorFlow, React)"
+                    required
+                  />
+                  <div class="tech-tags" id="techTags"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="projectDescription" class="form-label">
+                  <i class="fas fa-align-left"></i>
+                  Brief Description
+                </label>
+
+                <textarea
+                  id="projectDescription"
+                  class="form-input"
+                  placeholder="Describe your project, its purpose, and key features..."
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="linkedinLink" class="form-label">
+                  <i class="fab fa-linkedin"></i>
+                  LinkedIn Project Link
+                </label>
+                <input
+                  type="url"
+                  id="linkedinLink"
+                  class="form-input"
+                  placeholder="https://linkedin.com/posts/your-project-post"
+                />
+              </div>
+              <div class="form-group">
+                <label for="githubLink" class="form-label">
+                  <i class="fab fa-github"></i>
+                  GitHub Repository Link
+                </label>
+                <input
+                  type="url"
+                  id="githubLink"
+                  class="form-input"
+                  placeholder="https://github.com/username/repository"
+                />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn-secondary"
+                onclick="history.back()"
+              >
+                <i class="fas fa-arrow-left"></i>
+                Cancel
+              </button>
+              <button type="submit" class="btn-primary">
+                <i class="fas fa-plus-circle"></i>
+                Add Project
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="/" class="nav-logo">
+              <img
+                src="/assets/logo.png"
+                alt="Hive Mind Logo"
+                class="logo-img"
+              />
+              <span>HIVE MIND</span>
+            </a>
+            <p>Building the future with Artificial Intelligence!</p>
+            <div class="social-links full-labels">
+              <a
+                href="https://in.linkedin.com/company/hivemind-sist"
+                class="social-link"
+                target="_blank"
+                title="LinkedIn"
+                ><i class="fab fa-linkedin"></i>LinkedIn</a
+              >
+              <a
+                href="https://www.instagram.com/hivemind_sist"
+                class="social-link"
+                target="_blank"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i>Instagram</a
+              >
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-envelope"> </i> Email@gmail.com</a
+                >
+              </li>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-map-location-dot"> </i> SCAS Block, AI
+                  Supercomputing Lab</a
+                >
+              </li>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-university"> </i> Sathyabama Institute of
+                  Science and Technology, Chennai</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>
+                <a href="/" class="social-link"
+                  ><i class="fas fa-home"> </i> Home</a
+                >
+              </li>
+              <li>
+                <a href="/projects" class="social-link"
+                  ><i class="fas fa-lightbulb"> </i> Projects</a
+                >
+              </li>
+              <li>
+                <a href="/members" class="social-link"
+                  ><i class="fas fa-user-tie"> </i> Members</a
+                >
+              </li>
+              <li>
+                <a href="/blogs" class="social-link"
+                  ><i class="fas fa-pen-nib"> </i> Blogs</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Hive Mind Community. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Corrected Script Tags -->
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/addproject.js"></script>
+  </body>
+</html>

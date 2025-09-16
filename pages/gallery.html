@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Hive Mind</title>
+    <meta
+      name="description"
+      content="Explore our gallery of projects, events, and memories at Hive Mind Community"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;7-0;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">
+          <img src="/assets/logo.png" alt="Hive Mind Logo" class="logo-img" />
+          <span>HIVE MIND</span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/projects" class="nav-link">Projects</a></li>
+          <li><a href="/members" class="nav-link">Members</a></li>
+          <li><a href="/gallery" class="nav-link active">Gallery</a></li>
+          <li><a href="/blogs" class="nav-link">Blogs</a></li>
+        </ul>
+        <!-- DYNAMIC AUTH SECTION -->
+        <div class="auth-section">
+          {% if user %}
+          <span class="welcome-user">{{ user.name }}</span>
+          <a href="/logout" class="login-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+          {% else %}
+          <a href="/login" class="login-btn">
+            <i class="fas fa-user"></i>
+            <span>Login</span>
+          </a>
+          {% endif %}
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Gallery</h1>
+        <p class="page-subtitle">
+          Capturing moments of innovation and collaboration
+        </p>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="gallery-header">
+          <div class="gallery-tabs">
+            <button class="tab-btn active" data-category="all">All</button>
+            <button class="tab-btn" data-category="projects">
+              Project Demos
+            </button>
+            <button class="tab-btn" data-category="lab">Lab Sessions</button>
+            <button class="tab-btn" data-category="events">
+              Industry Visits
+            </button>
+            <button class="tab-btn" data-category="team">Team Photos</button>
+          </div>
+          <a href="/add-image" class="add-btn">
+            <i class="fas fa-plus"></i>
+            <span>Add Photo</span>
+          </a>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="/" class="nav-logo">
+              <img
+                src="/assets/logo.png"
+                alt="Hive Mind Logo"
+                class="logo-img"
+              />
+              <span>HIVE MIND</span>
+            </a>
+            <p>Building the future with Artificial Intelligence!</p>
+            <div class="social-links full-labels">
+              <a
+                href="https://in.linkedin.com/company/hivemind-sist"
+                class="social-link"
+                target="_blank"
+                title="LinkedIn"
+                ><i class="fab fa-linkedin"></i>LinkedIn</a
+              >
+              <a
+                href="https://www.instagram.com/hivemind_sist"
+                class="social-link"
+                target="_blank"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i>Instagram</a
+              >
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-envelope"> </i> Email@gmail.com</a
+                >
+              </li>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-map-location-dot"> </i> SCAS Block, AI
+                  Supercomputing Lab</a
+                >
+              </li>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-university"> </i> Sathyabama Institute of
+                  Science and Technology, Chennai</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>
+                <a href="/" class="social-link"
+                  ><i class="fas fa-home"> </i> Home</a
+                >
+              </li>
+              <li>
+                <a href="/projects" class="social-link"
+                  ><i class="fas fa-lightbulb"> </i> Projects</a
+                >
+              </li>
+              <li>
+                <a href="/members" class="social-link"
+                  ><i class="fas fa-user-tie"> </i> Members</a
+                >
+              </li>
+              <li>
+                <a href="/blogs" class="social-link"
+                  ><i class="fas fa-pen-nib"> </i> Blogs</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Hive Mind Community. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="galleryModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="galleryModalContent"></div>
+      </div>
+    </div>
+
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/gallery.js"></script>
+  </body>
+</html>

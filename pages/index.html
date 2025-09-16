@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hive Mind - AI Community</title>
+    <meta name="description"
+        content="Hive Mind - Student AI Community at Sathyabama Institute of Science and Technology">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/assets/logo.png" alt="Hive Mind Logo" class="logo-img">
+                <span>HIVE MIND</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/projects" class="nav-link">Projects</a></li>
+                <li><a href="/members" class="nav-link">Members</a></li>
+                <li><a href="/gallery" class="nav-link">Gallery</a></li>
+                <li><a href="/blogs" class="nav-link">Blogs</a></li>
+            </ul>
+
+            <!-- DYNAMIC AUTH SECTION -->
+            <div class="auth-section">
+                {% if user %}
+                <span class="welcome-user">{{ user.name }}</span>
+                <a href="/logout" class="login-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+                {% else %}
+                <a href="/login" class="login-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Login</span>
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="/assets/bee_background.gif" alt="Bee Animation" class="background-gif">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text-glow" data-text="HIVE MIND">HIVE MIND</span>
+                <p class="hero-subtitle">Artificial Intelligence Community</p>
+            </h1>
+            <p class="hero-description">
+                A student-run community at Sathyabama Institute of Science and Technology,
+                pushing the boundaries of Artificial Intelligence through collaborative learning and innovative projects
+                in the AIML and Deep Learning domain.
+            </p>
+
+            <!-- DYNAMIC STATS SECTION -->
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="{{ project_count }}">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="{{ member_count }}">0</span>
+                    <span class="stat-label">Members</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="{{ days_count }}">0</span>
+                    <span class="stat-label">Days</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Hive Mind</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hive Mind is a passionate community of students at Sathyabama Institute of Science and
+                        Technology
+                        who have come together to explore the fascinating world of Artificial Intelligence. Operating
+                        from
+                        the AI supercomputing lab in SCAS block, we're not just another student group – we're
+                        innovators,
+                        learners, and future AI leaders.
+                    </p>
+                    <p>
+                        Our community focuses on practical learning through hands-on projects including chatbots,
+                        RAG models, Transformers, Image Models, and cutting-edge AI applications. With guidance from
+                        our dedicated faculty mentors, we bridge the gap between theoretical knowledge and real-world
+                        implementation.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-robot"></i>
+                            <h3>Machine Learning</h3>
+                            <p>Developing intelligent systems that learn from data, from basic algorithms to advanced
+                                neural networks and ensemble methods.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-brain"></i>
+                            <h3>Deep Learning</h3>
+                            <p>Building and training neural networks for complex tasks including image recognition,
+                                natural
+                                language processing, and generative AI.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-comments"></i>
+                            <h3>NLP & Chatbots</h3>
+                            <p>Creating conversational AI systems, language models, and text analysis tools that
+                                understand and generate human language.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-eye"></i>
+                            <h3>Computer Vision</h3>
+                            <p>Developing systems that can interpret and analyze visual information, from object
+                                detection to image generation.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-database"></i>
+                            <h3>RAG Systems</h3>
+                            <p>Building Retrieval-Augmented Generation models that combine the power of large language
+                                models with external knowledge bases.</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h3>Collaborative Learning</h3>
+                            <p>Fostering a supportive community where members share knowledge, collaborate on projects,
+                                and grow together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="/" class="nav-logo">
+                        <img src="/assets/logo.png" alt="Hive Mind Logo" class="logo-img">
+                        <span>HIVE MIND</span>
+                    </a>
+                    <p>Building the future with Artificial Intelligence!</p>
+                    <div class="social-links full-labels">
+                        <a href="https://in.linkedin.com/company/hivemind-sist" class="social-link" target='_blank'
+                            title="LinkedIn"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                        <a href="https://www.instagram.com/hivemind_sist" class="social-link" target='_blank'
+                            title="Instagram"><i class="fab fa-instagram"></i>Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a class="social-link"><i class="fas fa-envelope"> </i> Email@gmail.com</a></li>
+                        <li><a class="social-link"><i class="fas fa-map-location-dot"> </i> SCAS Block, AI
+                                Supercomputing
+                                Lab</a></li>
+                        <li><a class="social-link"><i class="fas fa-university"> </i> Sathyabama Institute of Science
+                                and Technology, Chennai</a>
+
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/" class="social-link"><i class="fas fa-home"> </i> Home</a></li>
+                        <li><a href="/projects" class="social-link"><i class="fas fa-lightbulb"> </i> Projects</a>
+                        <li><a href="/members" class="social-link"><i class="fas fa-user-tie"> </i> Members</a></li>
+                        <li><a href="/blogs" class="social-link"><i class="fas fa-pen-nib"> </i> Blogs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hive Mind Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/home.js"></script>
+</body>
+
+</html>

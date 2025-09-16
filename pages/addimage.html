@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Image - Hive Mind</title>
+    <meta name="description" content="Add a new image to Hive Mind Gallery" />
+    <!-- Corrected path for CSS -->
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <!-- Corrected paths for routes and assets -->
+        <a href="/" class="nav-logo">
+          <img src="/assets/logo.png" alt="Hive Mind Logo" class="logo-img" />
+          <span>HIVE MIND</span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/projects" class="nav-link">Projects</a></li>
+          <li><a href="/members" class="nav-link">Members</a></li>
+          <li><a href="/gallery" class="nav-link">Gallery</a></li>
+          <li><a href="/blogs" class="nav-link">Blogs</a></li>
+        </ul>
+        <!-- DYNAMIC AUTH SECTION -->
+        <div class="auth-section">
+          {% if user %}
+          <span class="welcome-user">{{ user.name }}</span>
+          <a href="/logout" class="login-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+          {% else %}
+          <a href="/login" class="login-btn">
+            <i class="fas fa-user"></i>
+            <span>Login</span>
+          </a>
+          {% endif %}
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Add New Image</h1>
+        <p class="page-subtitle">
+          Share memorable moments with the Hive Mind community
+        </p>
+      </div>
+    </section>
+
+    <!-- Add Image Form Section -->
+    <section class="add-member">
+      <!-- Consider renaming this class to "add-image" for consistency -->
+      <div class="container">
+        <div class="add-member-card">
+          <!-- Consider renaming this class -->
+          <div class="form-header">
+            <i class="fas fa-image"></i>
+            <h2>Image Information</h2>
+            <p>
+              Please fill in all the required details to add a new image to the
+              gallery
+            </p>
+          </div>
+
+          <form class="member-form" id="imageForm">
+            <!-- Consider renaming this class -->
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="imageFile" class="form-label">
+                  <i class="fas fa-camera"></i>
+                  Upload Image *
+                </label>
+                <div class="file-upload-area" id="imageUpload">
+                  <div class="upload-placeholder">
+                    <i class="fas fa-upload"></i>
+                    <span>Click to upload image</span>
+                    <small>PNG, JPG, JPEG up to 10MB</small>
+                  </div>
+                  <input
+                    type="file"
+                    id="imageFile"
+                    accept="image/*"
+                    hidden
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="imageTitle" class="form-label">
+                  <i class="fas fa-heading"></i>
+                  Title *
+                </label>
+                <input
+                  type="text"
+                  id="imageTitle"
+                  class="form-input"
+                  placeholder="Enter image title"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="imageDescription" class="form-label">
+                  <i class="fas fa-align-left"></i>
+                  Brief Description *
+                </label>
+                <textarea
+                  id="imageDescription"
+                  class="form-textarea"
+                  placeholder="Enter a brief description of the image"
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="imageSection" class="form-label">
+                  <i class="fas fa-folder"></i>
+                  Section *
+                </label>
+                <select id="imageSection" class="form-select" required>
+                  <option value="">Select a section</option>
+                  <option value="projects">Project Demos</option>
+                  <option value="lab">Lab Sessions</option>
+                  <option value="events">Industry Visit</option>
+                  <option value="team">Team Photos</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn-secondary"
+                onclick="history.back()"
+              >
+                <i class="fas fa-arrow-left"></i>
+                Cancel
+              </button>
+              <button type="submit" class="btn-primary">
+                <i class="fas fa-plus"></i>
+                Add Image
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="/" class="nav-logo">
+              <img
+                src="/assets/logo.png"
+                alt="Hive Mind Logo"
+                class="logo-img"
+              />
+              <span>HIVE MIND</span>
+            </a>
+            <p>Building the future with Artificial Intelligence!</p>
+            <div class="social-links full-labels">
+              <a
+                href="https://in.linkedin.com/company/hivemind-sist"
+                class="social-link"
+                target="_blank"
+                title="LinkedIn"
+                ><i class="fab fa-linkedin"></i>LinkedIn</a
+              >
+              <a
+                href="https://www.instagram.com/hivemind_sist"
+                class="social-link"
+                target="_blank"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i>Instagram</a
+              >
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-envelope"> </i> Email@gmail.com</a
+                >
+              </li>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-map-location-dot"> </i> SCAS Block, AI
+                  Supercomputing Lab</a
+                >
+              </li>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-university"> </i> Sathyabama Institute of
+                  Science and Technology, Chennai</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>
+                <a href="/" class="social-link"
+                  ><i class="fas fa-home"> </i> Home</a
+                >
+              </li>
+              <li>
+                <a href="/projects" class="social-link"
+                  ><i class="fas fa-lightbulb"> </i> Projects</a
+                >
+              </li>
+              <li>
+                <a href="/members" class="social-link"
+                  ><i class="fas fa-user-tie"> </i> Members</a
+                >
+              </li>
+              <li>
+                <a href="/blogs" class="social-link"
+                  ><i class="fas fa-pen-nib"> </i> Blogs</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Hive Mind Community. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Corrected Script Tags -->
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/addimage.js"></script>
+  </body>
+</html>

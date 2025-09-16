@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Member - Hive Mind</title>
+    <meta
+      name="description"
+      content="Add a new member to Hive Mind Community"
+    />
+    <!-- Corrected path for CSS -->
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <!-- Corrected paths for routes and assets -->
+        <a href="/" class="nav-logo">
+          <img src="/assets/logo.png" alt="Hive Mind Logo" class="logo-img" />
+          <span>HIVE MIND</span>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/projects" class="nav-link">Projects</a></li>
+          <li><a href="/members" class="nav-link">Members</a></li>
+          <li><a href="/gallery" class="nav-link">Gallery</a></li>
+          <li><a href="/blogs" class="nav-link">Blogs</a></li>
+        </ul>
+        <!-- DYNAMIC AUTH SECTION -->
+        <div class="auth-section">
+          {% if user %}
+          <span class="welcome-user">{{ user.name }}</span>
+          <a href="/logout" class="login-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+          {% else %}
+          <a href="/login" class="login-btn">
+            <i class="fas fa-user"></i>
+            <span>Login</span>
+          </a>
+          {% endif %}
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Add New Member</h1>
+        <p class="page-subtitle">Join our talented team at Hive Mind</p>
+      </div>
+    </section>
+
+    <!-- Add Member Form Section -->
+    <section class="add-member">
+      <div class="container">
+        <div class="add-member-card">
+          <div class="form-header">
+            <i class="fas fa-user-plus"></i>
+            <h2>Member Information</h2>
+            <p>Please fill in all the required details to add a new member</p>
+          </div>
+
+          <form class="member-form" id="memberForm">
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="profileImage" class="form-label">
+                  <i class="fas fa-image"></i>
+                  Profile Photo
+                </label>
+                <div class="file-upload-area" id="profileUpload">
+                  <div class="upload-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <span>Click to upload profile photo</span>
+                    <small>PNG, JPG, JPEG up to 5MB</small>
+                  </div>
+                  <input
+                    type="file"
+                    id="profileImage"
+                    accept="image/*"
+                    hidden
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName" class="form-label">
+                  <i class="fas fa-user"></i>
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  class="form-input"
+                  placeholder="Enter full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="role" class="form-label">
+                  <i class="fas fa-briefcase"></i>
+                  Role *
+                </label>
+                <input
+                  type="text"
+                  id="role"
+                  class="form-input"
+                  placeholder="e.g., Machine Learning Engineer"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="linkedin" class="form-label">
+                  <i class="fab fa-linkedin"></i>
+                  LinkedIn Profile
+                </label>
+                <input
+                  type="url"
+                  id="linkedin"
+                  class="form-input"
+                  placeholder="https://linkedin.com/in/username"
+                />
+              </div>
+              <div class="form-group">
+                <label for="github" class="form-label">
+                  <i class="fab fa-github"></i>
+                  GitHub Profile
+                </label>
+                <input
+                  type="url"
+                  id="github"
+                  class="form-input"
+                  placeholder="https://github.com/username"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="resume" class="form-label">
+                  <i class="fas fa-file-alt"></i>
+                  Resume Upload
+                </label>
+                <div class="file-upload-area" id="resumeUpload">
+                  <div class="upload-placeholder">
+                    <i class="fas fa-upload"></i>
+                    <span>Click to upload resume</span>
+                    <small>PDF, DOC, DOCX up to 1MB</small>
+                  </div>
+                  <input
+                    type="file"
+                    id="resume"
+                    accept=".pdf,.doc,.docx"
+                    hidden
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email" class="form-label">
+                  <i class="fas fa-envelope"></i>
+                  Email ID *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-input"
+                  placeholder="Enter email address"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="password" class="form-label">
+                  <i class="fas fa-lock"></i>
+                  Set Password *
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  class="form-input"
+                  placeholder="Enter password"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: -40px">
+              <div class="form-group full-width">
+                <div class="checkbox-group">
+                  <label class="form-label">
+                    <input
+                      type="checkbox"
+                      id="adminPrivileges"
+                      class="checkbox-input"
+                    />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">
+                      <i class="fas fa-user-shield"></i>
+                      Grant this member Administrator Privileges
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn-secondary"
+                onclick="history.back()"
+              >
+                <i class="fas fa-arrow-left"></i>
+                Cancel
+              </button>
+              <button type="submit" class="btn-primary">
+                <i class="fas fa-user-plus"></i>
+                Add Member
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="/" class="nav-logo">
+              <img
+                src="/assets/logo.png"
+                alt="Hive Mind Logo"
+                class="logo-img"
+              />
+              <span>HIVE MIND</span>
+            </a>
+            <p>Building the future with Artificial Intelligence!</p>
+            <div class="social-links full-labels">
+              <a
+                href="https://in.linkedin.com/company/hivemind-sist"
+                class="social-link"
+                target="_blank"
+                title="LinkedIn"
+                ><i class="fab fa-linkedin"></i>LinkedIn</a
+              >
+              <a
+                href="https://www.instagram.com/hivemind_sist"
+                class="social-link"
+                target="_blank"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i>Instagram</a
+              >
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-envelope"> </i> Email@gmail.com</a
+                >
+              </li>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-map-location-dot"> </i> SCAS Block, AI
+                  Supercomputing Lab</a
+                >
+              </li>
+              <li>
+                <a class="social-link"
+                  ><i class="fas fa-university"> </i> Sathyabama Institute of
+                  Science and Technology, Chennai</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>
+                <a href="/" class="social-link"
+                  ><i class="fas fa-home"> </i> Home</a
+                >
+              </li>
+              <li>
+                <a href="/projects" class="social-link"
+                  ><i class="fas fa-lightbulb"> </i> Projects</a
+                >
+              </li>
+              <li>
+                <a href="/members" class="social-link"
+                  ><i class="fas fa-user-tie"> </i> Members</a
+                >
+              </li>
+              <li>
+                <a href="/blogs" class="social-link"
+                  ><i class="fas fa-pen-nib"> </i> Blogs</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Hive Mind Community. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Corrected Script Tags -->
+    <script src="/scripts/common.js"></script>
+    <script src="/scripts/addmember.js"></script>
+  </body>
+</html>
