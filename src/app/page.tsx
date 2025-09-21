@@ -1,9 +1,19 @@
-import React from 'react'
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import NavBar from "@/components/navigation";
+import React from "react";
 
-const page = () => {
+const Home = () => {
+  const user = null;
+
+
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <NavBar />
+      <Hero />
+      <Footer />
+    </div>
+  );
+};
 
-export default page
+export default Home;

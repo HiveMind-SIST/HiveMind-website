@@ -18,5 +18,9 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "registries": {}
+  "registries": {
+    "@acme": "https://registry.acme.com/{name}.json",
+    "@aceternity": "https://ui.aceternity.com/r/{name}.json",
+    "@reactbits": "https://reactbits.dev/r/{name}.json"
+  }
 }
