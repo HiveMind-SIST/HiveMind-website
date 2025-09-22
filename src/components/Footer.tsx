@@ -233,15 +233,6 @@ const Footer = () => {
             </div>
             <div ref={contactSectionRef} className='flex flex-col space-y-2'>
                 <h3 className='text-lg md:text-xl text-primary font-bold'>Contact</h3>
-                <a 
-                  href="mailto:admin@hivemind-sist.tech" 
-                  className='text-sm md:text-base hover:text-primary transition-colors duration-200 flex items-center space-x-2'
-                  onMouseEnter={(e) => handleLinkHover(e.currentTarget, true)}
-                  onMouseLeave={(e) => handleLinkHover(e.currentTarget, false)}
-                >
-                    <Mail size={16} className='text-primary' />
-                    <span>admin@hivemind-sist.tech</span>
-                </a>
                 <div className='text-sm md:text-base'>
                     <Tooltip>
                         <TooltipTrigger asChild>
@@ -277,6 +268,15 @@ const Footer = () => {
                         </TooltipContent>
                     </Tooltip>
                 </div>
+                <a 
+                  href="mailto:admin@hivemind-sist.tech" 
+                  className='text-sm md:text-base hover:text-primary transition-colors duration-200 flex items-center space-x-2'
+                  onMouseEnter={(e) => handleLinkHover(e.currentTarget, true)}
+                  onMouseLeave={(e) => handleLinkHover(e.currentTarget, false)}
+                >
+                    <Mail size={16} className='text-primary' />
+                    <span>admin@hivemind-sist.tech</span>
+                </a>
             </div>
             <div ref={linksSectionRef} className='flex flex-col space-y-2'>
                 <h3 className='text-lg md:text-xl text-primary font-bold'>Quick Links</h3>
