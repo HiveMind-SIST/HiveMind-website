@@ -14,30 +14,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hivemind-sist.tech'),
+  metadataBase: new URL("https://hivemind-sist.tech"),
   title: {
     default: "HiveMind - AI community",
-    template: "%s | HiveMind"
+    template: "%s | HiveMind",
   },
-  description: "HiveMind - a vibrant AI community at Sathyabama Institute of Science and Technology, where students collaborate, innovate, and explore cutting-edge artificial intelligence projects.",
-  keywords: ['HiveMind', 'community', 'SIST', 'AI', 'collaboration', 'networking', 'ideas'],
-  authors: [{ name: 'Kishor Ramanan', url: 'https://kishorramanan.com' }],
-  creator: 'Kishor',
+  description:
+    "HiveMind - a vibrant AI community at Sathyabama Institute of Science and Technology, where students collaborate, innovate, and explore cutting-edge artificial intelligence projects.",
+  keywords: [
+    "HiveMind",
+    "community",
+    "SIST",
+    "AI",
+    "collaboration",
+    "networking",
+    "ideas",
+  ],
+  authors: [{ name: "Kishor Ramanan", url: "https://kishorramanan.com" }],
+  creator: "Kishor",
   openGraph: {
     title: "HiveMind - AI Community at SIST",
-    description: "A vibrant AI community at Sathyabama Institute of Science and Technology, where students collaborate, innovate, and explore cutting-edge artificial intelligence projects.",
-    url: 'https://hivemind-sist.tech',
-    siteName: 'HiveMind',
+    description:
+      "A vibrant AI community at Sathyabama Institute of Science and Technology, where students collaborate, innovate, and explore cutting-edge artificial intelligence projects.",
+    url: "https://hivemind-sist.tech",
+    siteName: "HiveMind",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: 'HiveMind Logo',
+        alt: "HiveMind Logo",
       },
     ],
-    type: 'website',
-  }
+    type: "website",
+  },
 };
 
 export default function RootLayout({

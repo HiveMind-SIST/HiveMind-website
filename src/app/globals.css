@@ -4,11 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1.0000 0 0);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.1448 0 0);
-  --card: oklch(1.0000 0 0);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.1448 0 0);
-  --popover: oklch(1.0000 0 0);
+  --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.1448 0 0);
   --primary: oklch(0.2046 0 0);
   --primary-foreground: oklch(0.9851 0 0);
@@ -18,16 +18,16 @@
   --muted-foreground: oklch(0.5555 0 0);
   --accent: oklch(0.9702 0 0);
   --accent-foreground: oklch(0.2046 0 0);
-  --destructive: oklch(0.5830 0.2387 28.4765);
-  --destructive-foreground: oklch(1.0000 0 0);
+  --destructive: oklch(0.583 0.2387 28.4765);
+  --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.9219 0 0);
   --input: oklch(0.9219 0 0);
-  --ring: oklch(0.7090 0 0);
+  --ring: oklch(0.709 0 0);
   --chart-1: oklch(0.8088 0.0991 251.7533);
   --chart-2: oklch(0.6207 0.1894 259.9358);
   --chart-3: oklch(0.5495 0.2202 263.0917);
   --chart-4: oklch(0.4893 0.2202 264.0405);
-  --chart-5: oklch(0.4210 0.1792 266.0094);
+  --chart-5: oklch(0.421 0.1792 266.0094);
   --sidebar: oklch(0.9851 0 0);
   --sidebar-foreground: oklch(0.1448 0 0);
   --sidebar-primary: oklch(0.2046 0 0);
@@ -35,18 +35,25 @@
   --sidebar-accent: oklch(0.9702 0 0);
   --sidebar-accent-foreground: oklch(0.2046 0 0);
   --sidebar-border: oklch(0.9219 0 0);
-  --sidebar-ring: oklch(0.7090 0 0);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --sidebar-ring: oklch(0.709 0 0);
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   --radius: 0.625rem;
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
-  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
-  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-sm:
+    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-md:
+    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg:
+    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl:
+    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
@@ -66,16 +73,16 @@
   --muted: oklch(0.1846 0.0033 17.4542);
   --muted-foreground: oklch(0.9851 0 0);
   --accent: oklch(0.2685 0.0063 34.2976);
-  --accent-foreground: oklch(1.0000 0 0);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.7022 0.1892 22.2279);
   --destructive-foreground: oklch(0.9851 0 0);
-  --border: oklch(0.2520 0 0);
-  --input: oklch(0.2520 0 0);
+  --border: oklch(0.252 0 0);
+  --input: oklch(0.252 0 0);
   --ring: oklch(0.8986 0.1796 104.9888);
-  --chart-1: oklch(0.9438 0.1955 105.8340);
+  --chart-1: oklch(0.9438 0.1955 105.834);
   --chart-2: oklch(0.8614 0.1757 89.3932);
   --chart-3: oklch(0.7299 0.1779 55.9691);
-  --chart-4: oklch(0.6749 0.2180 38.4014);
+  --chart-4: oklch(0.6749 0.218 38.4014);
   --chart-5: oklch(0.6187 0.2509 27.9422);
   --sidebar: oklch(0.2046 0 0);
   --sidebar-foreground: oklch(0.9851 0 0);
@@ -85,17 +92,24 @@
   --sidebar-accent-foreground: oklch(0 0 0);
   --sidebar-border: oklch(0.4386 0 0);
   --sidebar-ring: oklch(0 0 0);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   --radius: 0.625rem;
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
-  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
-  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-sm:
+    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-md:
+    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg:
+    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl:
+    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
 }
 
@@ -163,174 +177,183 @@
 
 /* For Bee Dot Background (from previous version) TODO: Move to Components */
 :root {
-    --primary-yellow: #FFD700;
-  --secondary-yellow: #FFC107;
-  --accent-yellow: #FFEB3B;
-  --primary-black: #0D0D0D;
+  --primary-yellow: #ffd700;
+  --secondary-yellow: #ffc107;
+  --accent-yellow: #ffeb3b;
+  --primary-black: #0d0d0d;
   --secondary-black: #161616;
   --accent-black: #252525;
-  --text-primary: #FFFFFF;
-  --text-secondary: #CCCCCC;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
   --text-muted: #999999;
-    --gradient-primary: linear-gradient(135deg, #FFD700, #FFC107);
-  --gradient-dark: linear-gradient(135deg, #0D0D0D, #1A1A1A);
-  --gradient-accent: linear-gradient(45deg, #FFD700, #FF8F00);
+  --gradient-primary: linear-gradient(135deg, #ffd700, #ffc107);
+  --gradient-dark: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  --gradient-accent: linear-gradient(45deg, #ffd700, #ff8f00);
 
-    --shadow-primary: 0 4px 20px rgba(255, 215, 0, 0.3);
+  --shadow-primary: 0 4px 20px rgba(255, 215, 0, 0.3);
   --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.5);
 
-    --border-radius: 12px;
+  --border-radius: 12px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-dark);
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-dark);
+  z-index: -1;
 }
 
 .hero-background::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(ellipse at center, transparent 40%, rgba(13, 13, 13, 1) 80%);
-    pointer-events: none;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(13, 13, 13, 1) 80%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
 .background-gif {
-    position: absolute;
-    top: 52%;
-    left: 48.2%;
-    width: 100%;
-    height: 120%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    opacity: 0.6;
-    mask: radial-gradient(ellipse at center, black 30%, transparent 80%);
-    -webkit-mask: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  position: absolute;
+  top: 52%;
+  left: 48.2%;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.6;
+  mask: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  -webkit-mask: radial-gradient(ellipse at center, black 30%, transparent 80%);
 }
 
 .hero-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-
 .hero-title {
-    font-size: 4.5rem;
-    font-weight: 900;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    font-family: 'Orbitron', monospace;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-family: "Orbitron", monospace;
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    color: white;
-    margin-bottom: 3rem;
-    line-height: 1.5;
-    text-shadow:
-        -1px -1px 0 black,
-        1px -1px 0 black,
-        -1px 1px 0 black,
-        1px 1px 0 black;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 3rem;
+  line-height: 1.5;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
 }
 
 .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
 }
 
 @media (max-width: 768px) {
-     .hero-title {
-        font-size: 3rem;
-    }
-    .hero-stats {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
+  .hero-title {
+    font-size: 2.5rem;
+  }
 }
 
 .gradient-text-glow {
-    background: linear-gradient(135deg, #FF0080, #7928CA, #0070F3, #38bdf8, #FF0080);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    animation: aurora 10s ease-in-out infinite;
-    text-shadow:
-        0 0 5px rgba(255, 255, 255, 0.1),
-        0 0 10px rgba(121, 40, 202, 0.15),
-        0 0 15px rgba(0, 112, 243, 0.1);
+  background: linear-gradient(
+    135deg,
+    #ff0080,
+    #7928ca,
+    #0070f3,
+    #38bdf8,
+    #ff0080
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: aurora 10s ease-in-out infinite;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.1),
+    0 0 10px rgba(121, 40, 202, 0.15),
+    0 0 15px rgba(0, 112, 243, 0.1);
 }
 
 .stat {
-    text-align: center;
+  text-align: center;
 }
 
 .stat-number {
-    display: block;
-    font-size: 3rem;
-    font-weight: 900;
-    font-family: 'Orbitron', monospace;
-    background: linear-gradient(135deg, #ffd901, #ffa600, #f8cb60);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  display: block;
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: "Orbitron", monospace;
+  background: linear-gradient(135deg, #ffd901, #ffa600, #f8cb60);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-
 .stat-label {
-    color: var(--text-secondary);
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 @keyframes aurora {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
