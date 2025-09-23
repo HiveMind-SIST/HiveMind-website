@@ -1,10 +1,16 @@
 import React from "react";
+import CountUp from "./CountUp";
 
 const Hero = () => {
   const started_date = new Date("2025-01-20");
   const numberOfDays = Math.floor(
     (new Date().getTime() - started_date.getTime()) / (1000 * 60 * 60 * 24),
   );
+
+  const temp_data = {
+    projects: 12,
+    members: 150,
+  }
 
   return (
     <section id="home" className="hero">
@@ -31,21 +37,15 @@ const Hero = () => {
 
         <div className="hero-stats">
           <div className="stat">
-            <span className="stat-number" data-target="{{ project_count }}">
-              0
-            </span>
+            <CountUp from={0} to={temp_data.projects} delay={0.2} duration={2.5} className="stat-number stat-number-projects" />
             <span className="stat-label">Projects</span>
           </div>
           <div className="stat">
-            <span className="stat-number" data-target="{{ member_count }}">
-              0
-            </span>
+            <CountUp from={0} to={temp_data.members} delay={0.4} duration={3} className="stat-number stat-number-members" />
             <span className="stat-label">Members</span>
           </div>
           <div className="stat">
-            <span className="stat-number">
-              {numberOfDays}
-            </span>
+            <CountUp from={0} to={numberOfDays} delay={0.8} duration={2} className="stat-number stat-number-days" />
             <span className="stat-label">Days</span>
           </div>
         </div>

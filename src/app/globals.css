@@ -335,6 +335,21 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-variant-numeric: tabular-nums; /* Use monospace numbers */
+}
+
+/* Specific widths for each stat to prevent layout shifts */
+.stat-number-projects {
+  min-width: 2.2ch; /* For numbers like 12 */
+}
+
+.stat-number-members {
+  min-width: 3.2ch; /* For numbers like 150 */
+}
+
+.stat-number-days {
+  min-width: 3.2ch; /* For numbers like 245+ */
 }
 
 .stat-label {
